@@ -1,6 +1,6 @@
 # Solution explainer
 
-#### Any particular callouts/notable design decisions?
+#### Any particular callouts/notable design decisions?
 
 The application was developed using React/Typescript with React Container View Design Pattern<br/>
 The structure of the application is broken down into;
@@ -18,7 +18,7 @@ I believe this project will serve the main purpose.
 
 The home url contains params (org_name) this was done to make the homepage route dynamic.<br/>
 Also, the user can use the url params to validate they are viewing the correct organization, <br/>
-if a user modify the route params and the org_name is not valid, it redirect to the default organization (Qatalog).<br/>
-[Project demo video](https://www.loom.com/share/4de7bf5e8e9441429a20681e5a40b47b)
+if a user modify the route params and the org_name is not valid, it redirect to the default organization (Qatalog).<br/><br/>
+[Watch Project demo video](https://www.loom.com/share/4de7bf5e8e9441429a20681e5a40b47b)
 
 
