@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import { FC } from "react";
 import styled from "styled-components";
 import { Button, Dropdown } from "Components";
@@ -13,21 +14,32 @@ interface SettingsViewProps {
   organizations: Array<OrganizationArrayType>;
   handleReset: () => void;
   handleApplyTheme: () => void;
+  searchOrganizations: (org_name:string) => void;
   backgroundImage: string|undefined;
+  searchValue: Array<OrganizationArrayType>;
 };
 
 const SettingsView: FC<SettingsViewProps> = ({ 
   backgroundImage, organizations, selectedOrganization, 
-  setSelectedOrganization, handleApplyTheme, handleReset 
+  setSelectedOrganization, handleApplyTheme, handleReset,
+  searchOrganizations, searchValue
 }) => {
   return <Container backgroundImage={backgroundImage}>
     <Section>
       <SettingsContent>
-        <Dropdown 
+        {/* <Dropdown 
           options={organizations}
           onChange={setSelectedOrganization}
           selectedOption={selectedOrganization}
+        /> */}
+        <input type="search"  
+          onChange={event => searchOrganizations(event.target.value)}
         />
+        {searchValue && <div>
+          <ul>
+           {searchValue.map((item:any) => <li>{item.org_name}</li>)}
+          </ul>
+        </div>}
         <ButtonSection>
           <Button 
             title="Reset"
